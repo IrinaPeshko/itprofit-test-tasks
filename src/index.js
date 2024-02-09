@@ -1,5 +1,5 @@
 import './styles/main.scss';
-import { createContactForm } from './components/form/form';
+import { createForm } from './components/form/createForm';
 
 console.log('Как интересно!');
 
@@ -10,7 +10,7 @@ const heading = document.createElement('h1');
 heading.textContent = 'Form';
 heading.className = 'app__heading';
 
-const form = createContactForm();
+const form = createForm();
 
 const root = document.querySelector('#root');
 root.append(container);

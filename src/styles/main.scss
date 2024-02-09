@@ -1,6 +1,7 @@
 @import '~normalize.css';
 $font-size: 1rem;
 $font-family: 'Oswald', Arial, sans-serif;
+$main-color: #eb5757;
 
 html {
   font-size: $font-size;
@@ -34,6 +35,6 @@ html {
   transition: all 0.3s ease-in;
   &:hover {
     cursor: pointer;
-    background-color: #eb5757;
+    background-color: $main-color;
   }
 }

@@ -1,3 +1,5 @@
+$main-color: #eb5757;
+
 .form__container {
   width: 35%;
   height: fit-content;
@@ -38,6 +40,10 @@
   max-width: 100%;
 }
 
+.field__required {
+  color: $main-color;
+}
+
 .form__input-wrapper {
   display: flex;
   flex-direction: column;
@@ -62,4 +68,14 @@
 .form__button_submit {
   width: 270px;
   max-width: 100%;
+}
+
+.error {
+  padding: 8px 24px;
+  position: relative;
+  background-color: rgb(235, 87, 87, 0.4);
+}
+
+.invalid {
+  border-color: $main-color;
 }
