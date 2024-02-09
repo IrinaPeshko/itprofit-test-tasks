@@ -1,12 +1,39 @@
+@import '~normalize.css';
 $font-size: 1rem;
-$font-color: lch(53 105 40);
+$font-family: 'Oswald', Arial, sans-serif;
 
 html {
   font-size: $font-size;
-  color: $font-color;
 }
+
 .app__container {
+  font-family: $font-family;
   width: 90vw;
   height: 90vw;
   margin: auto;
+}
+
+.app__heading {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 141.667%;
+}
+
+.button {
+  padding: 15px 10px;
+  border: none;
+  background-color: #000000;
+  color: #ffffff;
+  max-width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  transition: all 0.3s ease-in;
+  &:hover {
+    cursor: pointer;
+    background-color: #eb5757;
+  }
 }

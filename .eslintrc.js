@@ -3,7 +3,7 @@ module.exports = {
     'browser': true,
     'es2021': true,
   },
-  'extends': ['google', "prettier"],
+  'extends': ['google', 'prettier'],
   'overrides': [
     {
       'env': {
@@ -21,8 +21,9 @@ module.exports = {
     'ecmaVersion': 'latest',
     'sourceType': 'module',
   },
-  "plugins": ["prettier"],
-  "rules": {
-    "prettier/prettier": "error"
-  }
+  'plugins': ['prettier'],
+  'rules': {
+    'prettier/prettier': 'error',
+    'require-jsdoc': 'off',
+  },
 };

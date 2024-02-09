@@ -7,7 +7,8 @@ const container = document.createElement('div');
 container.className = 'app__container';
 
 const heading = document.createElement('h1');
-heading.textContent = 'Как интересно!';
+heading.textContent = 'Form';
+heading.className = 'app__heading';
 
 const form = createContactForm();
 

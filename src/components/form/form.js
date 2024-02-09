@@ -1,32 +1,66 @@
+import '../../styles/form.scss';
+
 export function createContactForm() {
-    const form = document.createElement('form');
-    form.className = 'contact-form';
+  const formContainer = document.createElement('div');
+  formContainer.className = 'form__container';
 
-    const nameInput = document.createElement('input');
-    nameInput.type = 'text';
-    nameInput.name = 'name';
-    nameInput.placeholder = 'Name';
+  const form = document.createElement('form');
+  form.classList.add('form');
 
-    const emailInput = document.createElement('input');
-    emailInput.type = 'email';
-    emailInput.name = 'email';
-    emailInput.placeholder = 'E-mail';
+  const nameField = createFormField('name', 'text', 'Name', 'input');
+  const emailField = createFormField('email', 'email', 'E-mail', 'input');
+  const phoneField = createFormField('phone', 'text', 'Phone', 'input');
+  const messageField = createFormField(
+    'message',
+    'text',
+    'Message',
+    'textarea'
+  );
 
-    const phone = document.createElement('input');
-    phone.type = 'number';
-    phone.name = 'phone';
-    phone.placeholder = 'Phone';
+  const submitButton = document.createElement('button');
+  submitButton.type = 'submit';
+  submitButton.textContent = 'Submit';
+  submitButton.className = 'button form__button_submit';
 
-    const message = document.createElement('input');
-    message.type = 'text';
-    message.name = 'message';
-    message.placeholder = 'Message';
+  form.append(nameField, emailField, phoneField, messageField, submitButton);
+  formContainer.append(form);
 
-    const submitButton = document.createElement('button');
-    submitButton.type = 'submit';
-    submitButton.textContent = 'Submit';
+  return formContainer;
+}
 
-    form.append(nameInput, emailInput, phone, message, submitButton);
+function createFormField(name, type, placeholder, inputType) {
+  const fieldWrapper = document.createElement('div');
+  fieldWrapper.className = 'field__wrapper';
 
-    return form;
+  const label = document.createElement('label');
+  label.className = 'form__label';
+  label.setAttribute('for', name);
+  label.textContent = placeholder;
+
+  const inputWrapper = document.createElement('span');
+  inputWrapper.className = 'form__input-wrapper';
+
+  let input;
+  if (inputType === 'textarea') {
+    input = document.createElement('textarea');
+    input.rows = 4;
+    input.classList.add('form__textarea');
+  } else {
+    input = document.createElement('input');
+    input.type = type;
+  }
+
+  input.classList.add('form__input');
+  input.id = name;
+  input.name = name;
+  input.placeholder = placeholder;
+
+  const messageSpan = document.createElement('span');
+  messageSpan.className = 'form__message';
+  messageSpan.setAttribute('aria-live', 'polite');
+
+  inputWrapper.append(input, messageSpan);
+  fieldWrapper.append(label, inputWrapper);
+
+  return fieldWrapper;
 }
