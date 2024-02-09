@@ -5,3 +5,8 @@ html {
   font-size: $font-size;
   color: $font-color;
 }
+.app__container {
+  width: 90vw;
+  height: 90vw;
+  margin: auto;
+}
