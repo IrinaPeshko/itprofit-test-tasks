@@ -15,9 +15,11 @@ export function validateForm() {
     } else {
       clearError(field);
     }
-
     if (field.type === 'email' && !validateEmail(field)) {
       showError(field, 'Please enter a valid email address');
+      isValid = false;
+    } else if (field.id === 'phone' && !validatePhone(field)) {
+      showError(field, 'Please enter a valid phone number');
       isValid = false;
     }
   });
@@ -46,4 +48,9 @@ export function clearError(input) {
   errorDisplay.textContent = '';
   errorDisplay.classList.remove('error');
   input.classList.remove('invalid');
+}
+
+export function validatePhone(phone) {
+  const regExp = /^\+375 \(\d{2}\) \d{3}-\d{2}-\d{2}$/;
+  return regExp.test(phone.value.trim());
 }

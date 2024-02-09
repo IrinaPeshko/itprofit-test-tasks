@@ -2,8 +2,10 @@ import {
   clearError,
   showError,
   validateEmail,
+  validatePhone,
   validateRequired,
 } from '../../utils/validation';
+import Inputmask from 'inputmask';
 
 export function createFormField(name, type, placeholder, inputType) {
   const fieldWrapper = document.createElement('div');
@@ -32,6 +34,10 @@ export function createFormField(name, type, placeholder, inputType) {
     input.type = type;
   }
 
+  if (name === 'phone') {
+    Inputmask('+375 (99) 999-99-99').mask(input);
+  }
+
   input.classList.add('form__input');
   input.id = name;
   input.name = name;
@@ -41,6 +47,8 @@ export function createFormField(name, type, placeholder, inputType) {
       showError(input, 'This field is required');
     } else if (input.type === 'email' && !validateEmail(input)) {
       showError(input, 'Please enter a valid email address');
+    } else if (input.id === 'phone' && !validatePhone(input)) {
+      showError(input, 'Please enter a valid phone number');
     } else {
       clearError(input);
     }
