@@ -1,5 +1,5 @@
 import '../../styles/modal.scss';
-import alien from '../../assets/images/alien.png'
+import alien from '../../assets/images/alien.png';
 export function createModalBtn() {
   const openModalButton = document.createElement('button');
   openModalButton.id = 'openModalButton';
@@ -8,6 +8,11 @@ export function createModalBtn() {
 
   openModalButton.addEventListener('click', () => {
     const modal = document.getElementById('modal');
+    const modalMessage = document.getElementById('modalMessage');
+    modalMessage.innerHTML = `
+    <p class= "modal__text">Congratulations! You've just discovered a secret modal window.\nClose to save the world from aliens!</p>
+    <img class = "modal__image" src="${alien}" alt="alien">
+  `;
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
   });
@@ -23,10 +28,7 @@ export function createModal() {
   modalContent.className = 'modal__content';
 
   const modalMessage = document.createElement('div');
-  modalMessage.innerHTML = `
-    <p class= "modal__text">Congratulations! You've just discovered a secret modal window. Close to save the world from aliens!</p>
-    <img class = "modal__image" src="${alien}" alt="alien">
-  `
+  modalMessage.id = 'modalMessage';
 
   const closeModalButton = document.createElement('span');
   closeModalButton.id = 'closeModalButton';
@@ -35,6 +37,7 @@ export function createModal() {
   closeModalButton.addEventListener('click', () => {
     modalContainer.style.display = 'none';
     document.body.style.overflow = 'auto';
+    modalContent.classList.remove('modal-success', 'modal-error');
   });
   modalContent.append(closeModalButton, modalMessage);
   modalContainer.append(modalContent);
