@@ -9,7 +9,8 @@
     "start": "webpack serve",
     "lint": "eslint 'src/**/*.{js,jsx}' --quiet",
     "lint:fix": "eslint --debug src --fix --color",
-    "format": "prettier --write 'src/**/*.{js,jsx,json,css,scss,md}'"
+    "format": "prettier --write 'src/**/*.{js,jsx,json,css,scss,md}'",
+    "server": "node server/index.js"
   },
   "keywords": [],
   "author": "",
@@ -34,6 +35,8 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
     "inputmask": "^5.0.8",
     "normalize.css": "^8.0.1"
   }
