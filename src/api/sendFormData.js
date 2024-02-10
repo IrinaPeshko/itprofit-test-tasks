@@ -1,7 +1,11 @@
 import { showMessages } from './showMessages';
 
 export function sendFormData(data) {
-  fetch('http://localhost:9090/api/registration', {
+  const baseUrl =
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:10000'
+      : 'https://itprofit-test-tasks.onrender.com';
+  fetch(`${baseUrl}/api/registration`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
