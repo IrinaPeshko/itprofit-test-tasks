@@ -5,7 +5,7 @@ import {
   validatePhone,
   validateRequired,
 } from '../../utils/validation';
-import Inputmask from 'inputmask';
+import inputmask from 'inputmask';
 
 export function createFormField(name, type, placeholder, inputType) {
   const fieldWrapper = document.createElement('div');
@@ -35,7 +35,7 @@ export function createFormField(name, type, placeholder, inputType) {
   }
 
   if (name === 'phone') {
-    Inputmask('+375 (99) 999-99-99').mask(input);
+    inputmask('+375 (99) 999-99-99').mask(input);
   }
 
   input.classList.add('form__input');

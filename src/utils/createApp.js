@@ -1,4 +1,4 @@
-import { createForm } from "../components/form/createForm";
+import { createForm } from '../components/form/createForm';
 
 export function createApp() {
   const container = document.createElement('div');

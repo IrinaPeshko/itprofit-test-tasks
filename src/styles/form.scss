@@ -33,8 +33,15 @@ $main-color: #eb5757;
 
 .field__wrapper {
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+  .form__input-wrapper {
+    .error {
+      visibility: visible;
+      height: 14px;
+    }
+  }
 }
+
 .form__label {
   align-self: flex-start;
   max-width: 100%;
@@ -70,10 +77,18 @@ $main-color: #eb5757;
   max-width: 100%;
 }
 
+.form__message {
+  height: 24px;
+  visibility: hidden;
+}
+
 .error {
-  padding: 8px 24px;
+  padding: 5px;
   position: relative;
   background-color: rgb(235, 87, 87, 0.4);
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 14px;
 }
 
 .invalid {
