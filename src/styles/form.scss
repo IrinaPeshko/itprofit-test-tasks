@@ -1,4 +1,4 @@
-$main-color: #eb5757;
+$error-color: #eb5757;
 
 .form__container {
   width: 35%;
@@ -6,6 +6,8 @@ $main-color: #eb5757;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 20px;
   border: 1px solid #c4c4c4;
   padding: 100px 10px;
   margin: auto;
@@ -48,7 +50,7 @@ $main-color: #eb5757;
 }
 
 .field__required {
-  color: $main-color;
+  color: $error-color;
 }
 
 .form__input-wrapper {
@@ -92,5 +94,5 @@ $main-color: #eb5757;
 }
 
 .invalid {
-  border-color: $main-color;
+  border-color: $error-color;
 }

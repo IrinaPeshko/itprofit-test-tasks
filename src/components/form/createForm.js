@@ -1,5 +1,6 @@
 import '../../styles/form.scss';
 import { validateForm } from '../../utils/validation';
+import { createModal, createModalBtn } from '../modal/createModal';
 import { createFormField } from './createFormField';
 
 export function createForm() {
@@ -32,6 +33,8 @@ export function createForm() {
     }
   });
 
-  formContainer.append(form);
+  const modal = createModal()
+  const modalBtn = createModalBtn();
+  formContainer.append(modal,form, modalBtn);
   return formContainer;
 }
